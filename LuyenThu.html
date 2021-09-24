@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Human {
+      name;
+      height;
+      weight;
+
+      constructor(a, b, c) {
+          this.name = a;
+          this.height = b;
+          this.weight = c;
+      }
+
+      talking() {
+          alert("Nào mình cùng lên xe buýt");
+      }
+
+      singing() {
+          alert("Bốn phương trời");
+      }
+  }
+
+  let human1 = new Human('Xíu','1.55','47');
+  let human2 = new Human('Bé','1.59','51');
+  console.log(human1.name, human1.weight);
+  console.log(human2.name);
+  human1.talking();
+  human2.singing();
+</script>
+</body>
+</html>

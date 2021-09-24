@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Meo {
+        ten;
+        diem;
+
+        constructor(a, b) {
+            this.ten = a;
+            this.diem = b;
+        }
+
+        biLua() {
+            this.diem -= 2;
+        }
+    }
+
+    class Chuot {
+        ten;
+        diem;
+
+        constructor(c, d) {
+            this.ten = c;
+            this.diem = d;
+        }
+
+        biCao() {
+            this.diem -= 1;
+        }
+    }
+
+
+    let meo1 = new Meo("Tom", 100);
+    let meo2 = new Meo("Oogy", 100);
+    meo1.biLua();
+    console.log(meo1.diem);
+    console.log(meo2.diem);
+    let chuot = new Chuot("Jerry", 100);
+    chuot.biCao();
+    console.log(chuot.diem);
+
+</script>
+</body>
+</html>

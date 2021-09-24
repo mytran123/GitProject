@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Student {
+        name;
+        score;
+
+        constructor(a, b) {
+            this.name = a;
+            this.score = b;
+        }
+
+        doHomework() {
+            this.score += 2
+        }
+
+        writeNote() {
+            this.score += 1
+        }
+
+        givePoint(someOne,x) {
+            this.score -= x;
+            someOne.score += x;
+        }
+
+        getScore() {
+            return this.score;
+        }
+    }
+
+    let student1 = new Student("My", 10);
+    let student2 = new Student("Mi", 10);
+    student1.doHomework();
+    student2.writeNote();
+    student1.givePoint(student2,1);
+    console.log(student1.getScore());
+</script>
+</body>
+</html>
