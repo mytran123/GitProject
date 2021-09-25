@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d32eb2;"></canvas>
+<script>
+    function Circle(x, y, radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+//Vẽ hình tròn với bán kính cố định là 80
+//     function createCircle() {
+//         let ctx = document.getElementById("myCanvas").getContext("2d");
+//         let circle = new Circle(500, 500, 80);
+//         ctx.beginPath();
+//         ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+//         ctx.fill();
+//     }
+//
+//     createCircle();
+
+//Vẽ hình tròn với bán kính ngẫu nhiên
+//khai báo thêm radius = Math.floor(Math.random() * giá trị bán kính)
+    function createCircle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let radius = Math.floor(Math.random() * 80);
+        let circle = new Circle(500, 500, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+    createCircle();
+
+//Vẽ hình tròn với màu ngẫu nhiên
+
+
+</script>
 </body>
 </html>
