@@ -13,15 +13,15 @@
         this.radius = radius;
     }
 //Vẽ hình tròn với bán kính cố định là 80
-//     function createCircle() {
-//         let ctx = document.getElementById("myCanvas").getContext("2d");
-//         let circle = new Circle(500, 500, 80);
-//         ctx.beginPath();
-//         ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-//         ctx.fill();
-//     }
-//
-//     createCircle();
+    function createCircle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let circle = new Circle(500, 500, 80);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+    createCircle();
 
 //Vẽ hình tròn với bán kính ngẫu nhiên
 //khai báo thêm radius = Math.floor(Math.random() * giá trị bán kính)
