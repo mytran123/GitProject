@@ -61,8 +61,17 @@
         ctx.fill();
     }
 
-    createCircle();
-    createCircle();
+    // createCircle();
+    // createCircle();
+
+//Vẽ rất nhiều hình tròn thì thêm vòng lặp
+    function createMultipleCircle() {
+        for(let i = 0; i < 30; i++) {
+            createCircle();
+        }
+    }
+
+    createMultipleCircle();
 
 
 </script>
