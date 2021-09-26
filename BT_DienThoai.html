@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        nokia;
+        iphone;
+
+        constructor(nokia, iphone) {
+            this.nokia = nokia;
+            this.iphone = iphone;
+        }
+
+        checkStatusOnOff() {
+            if (this.nokia > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        turnOn() {
+            alert("Điện thoại đang bật");
+        }
+
+        turnOf() {
+            alert("Diện thoại đang tắt");
+        }
+
+        charge() {
+            alert("Sạc pin " + this.nokia++);
+        }
+
+        writeMessenger() {
+            prompt("Đây là messenger");
+        }
+
+        massengerL() {
+            alert("messenger đã gửi");
+        }
+
+        afterUse() {
+            alert("Dùng một chức năng: " + this.nokia--);
+        }
+
+    }
+    let mobile = new Mobile(10, 100);
+    let turnon = mobile.turnOn();
+    let turnof = mobile.turnOf();
+    let charge = mobile.charge();
+    let writemessenger = mobile.writeMessenger();
+    let massengerl = mobile.massengerL();
+    let afteruse = mobile.afterUse();
+
+</script>
+</body>
+</html>
