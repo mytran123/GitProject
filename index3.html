@@ -13,12 +13,16 @@
         y;
         side;
         color;
+        speedX;
+        speedY;
 
-        constructor(x, y, side, color) {
+        constructor(x, y, side, color, speedX, speedY) {
             this.x = x;
             this.y = y;
             this.side = side;
             this.color = color;
+            this.speedX = speedX;
+            this.speedY = speedY;
         }
 
         setSide(side) {
@@ -44,22 +48,36 @@
         }
 
         moveLeft() {
-            this.x -= 10;
+            this.x += this.speedX;
         }
 
         moveDown() {
-            this.y += 10;
+            this.y += this.speedY;
+        }
+
+        check() {
+            if (this.y < 0 || this.y > 500 - this.side) {
+                this.speedY = -this.speedY;
+            }
+            if (this.x < 0 || this.x > 300 - this.side) {
+                this.speedX = -this.speedX;
+            }
         }
     }
 
     let ctx = document.getElementById('canvas').getContext('2d');
-    let square = new Square(20, 100, 100, 'violet');
+    let square = new Square(20, 50, 50, 'orange', 2, 3);
+    moveSquare(); //thêm dòng này
 
     function moveSquare() {
         ctx.clearRect(square.x, square.y, square.side, square.side);
         square.moveDown();
+        square.moveLeft();
+        square.check();
         square.draw(ctx);
-    }
+        // setTimeout(moveSquare, 200); //và cả dòng này để tự động chạy (cách 1)
+        requestAnimationFrame(moveSquare); // (cách 2)
+     }
 </script>
 </body>
 </html>
