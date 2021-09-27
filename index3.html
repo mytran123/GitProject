@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="300" height="500" style="border: 1px solid"></canvas>
+<button onclick="moveSquare()">Click</button>
+<script>
+    class Square {
+        x;
+        y;
+        side;
+        color;
+
+        constructor(x, y, side, color) {
+            this.x = x;
+            this.y = y;
+            this.side = side;
+            this.color = color;
+        }
+
+        setSide(side) {
+            this.side = side;
+        }
+
+        getPerimeter() {
+            return this.side * 4;
+        }
+
+        getArea() {
+            return this.side ** 2;
+        }
+
+        //di chuyển hình vuông nhớ nhấc bút
+
+        draw(ctx) {
+            ctx.beginPath();
+            ctx.rect(this.x, this.y, this.side, this.side);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        moveLeft() {
+            this.x -= 10;
+        }
+
+        moveDown() {
+            this.y += 10;
+        }
+    }
+
+    let ctx = document.getElementById('canvas').getContext('2d');
+    let square = new Square(20, 100, 100, 'violet');
+
+    function moveSquare() {
+        ctx.clearRect(square.x, square.y, square.side, square.side);
+        square.moveDown();
+        square.draw(ctx);
+    }
+</script>
+</body>
+</html>
