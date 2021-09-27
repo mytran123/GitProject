@@ -64,7 +64,7 @@
         side;
         color;
 
-        constructor(x, y, side) {
+        constructor(x, y, side, color) {
             this.x = x;
             this.y = y;
             this.side = side;
@@ -96,15 +96,12 @@
     // alert("perimeter: " + perimeter + "; area: " + area);
 
     let ctx = document.getElementById('canvas').getContext('2d');
-    for(let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
         let x = Math.random() * 300;
         let y = Math.random() * 500;
         let square = new Square(x, y, 30, 'Pink');
         square.draw(ctx);
     }
-
-
-
 </script>
 </body>
 </html>
