@@ -18,7 +18,7 @@
         }
 
         checkStatusOnOff() {
-            if (this.nokia > 0) {
+            if (this.id > 0) {
                 return true;
             } else {
                 return false;
@@ -34,7 +34,7 @@
         }
 
         charge() {
-            alert("Sạc pin " + this.nokia++);
+            alert("Sạc pin " + this.id++);
         }
 
         setMessage(message) {
@@ -62,8 +62,6 @@
     let turnon = mobile.turnOn();
     let turnof = mobile.turnOf();
     let charge = mobile.charge();
-    let writemessenger = mobile.writeMessenger();
-    let massengerl = mobile.massengerL();
     let afteruse = mobile.afterUse();
 
 </script>
