@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="canvas" width="300" height="500" style="border: 1px solid"></canvas>
+<script>
+    //bổ sung thuộc tính màu, tọa độ
+    //viết chương trình vẽ 10 hình có tọa độ ngẫu nhiên
+    class Square {
+        x;
+        y;
+        side;
+        color;
+
+        constructor(x, y, side, color) {
+            this.x = x;
+            this.y = y;
+            this.side = side;
+            this.color = color;
+        }
+
+        setSide(side) {
+            this.side = side;
+        }
+
+        getPerimeter() {
+            return this.side * 4;
+        }
+
+        getArea() {
+            return this.side ** 2;
+        }
+
+        draw(ctx) {
+            ctx.rect(this.x, this.y, this.side, this.side);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+
+    // let square = new Square(50);
+    // let perimeter = square.getPerimeter();
+    // let area = square.getArea();
+    // alert("perimeter: " + perimeter + "; area: " + area);
+
+    let ctx = document.getElementById('canvas').getContext('2d');
+    for (let i = 0; i < 10; i++) {
+        let x = Math.random() * 300;
+        let y = Math.random() * 500;
+        let square = new Square(x, y, 30, 'Pink');
+        square.draw(ctx);
+    }
+</script>
 </body>
 </html>
