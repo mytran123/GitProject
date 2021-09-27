@@ -7,12 +7,14 @@
 <body>
 <script>
     class Mobile {
-        nokia;
-        iphone;
+        id;
+        name;
+        message;
 
-        constructor(nokia, iphone) {
-            this.nokia = nokia;
-            this.iphone = iphone;
+        constructor(id, name) {
+            this.id = id;
+            this.name = name;
+            this.message = "";
         }
 
         checkStatusOnOff() {
@@ -35,12 +37,16 @@
             alert("Sạc pin " + this.nokia++);
         }
 
-        writeMessenger() {
-            prompt("Đây là messenger");
+        setMessage(message) {
+            this.message = message;
         }
 
-        massengerL() {
-            alert("messenger đã gửi");
+        getMessage() {
+            return this.message;
+        }
+
+        sentMessage(message, mobile) {
+            mobile.setMessage(message);
         }
 
         afterUse() {
@@ -48,7 +54,11 @@
         }
 
     }
-    let mobile = new Mobile(10, 100);
+    let nokia = new Mobile(1, "Nokia");
+    let iphone = new Mobile(2, "Iphone");
+    nokia.sentMessage("Hello",iphone);
+    let message = iphone.getMessage();
+
     let turnon = mobile.turnOn();
     let turnof = mobile.turnOf();
     let charge = mobile.charge();
