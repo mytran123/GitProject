@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="300" height="500" style="border: 1px solid"></canvas>
+<script>
+    // let c = document.getElementById('canvas'); //lấy giấy
+    // let ctx = c.getContext('2d'); //lấy bút
+    // ctx.beginPath();
+    // ctx.rect(100, 100, 30, 30);
+    // ctx.fill(); //fill vẽ tô màu
+    // ctx.closePath();
+    //
+    // ctx.beginPath();
+    // ctx.arc(50, 50, 50, 0, 2 * Math.PI)
+    // ctx.stroke(); //stroke vẽ viền
+    // ctx.closePath();
+
+    //Viết class Hình tròn, có bán kính, có phương thức Thay đổi bán tính, tính Chu vi, Tính diện tích, vẽ ra canvas
+    // class Circle {
+    //     radius;
+    //
+    //     constructor(radius) {
+    //         this.radius = radius;
+    //     }
+    //
+    //     getRadius() {
+    //         return this.radius;
+    //     }
+    //
+    //     getPerimeter() {
+    //         return Math.PI * this.radius * 2;
+    //     }
+    //
+    //     getArea() {
+    //         return Math.PI * this.radius * this.radius;
+    //     }
+    //
+    //     draw() {
+    //         let ctx = document.getElementById('canvas').getContext('2d');
+    //         ctx.beginPath();
+    //         ctx.arc(50, 50, radius, 0, 2 * Math.PI)
+    //         ctx.fill();
+    //         ctx.closePath();
+    //     }
+    // }
+    //
+    // let circle = new Circle(50);
+    // let ctx = document.getElementById('canvas').getContext('2d');
+    // let radius = circle.getRadius();
+    // let perimeter = circle.getPerimeter();
+    // let area = circle.getArea();
+    // alert("perimeter: " + perimeter + " ; area: " + area);
+    // circle.draw(ctx);
+
+    //bổ sung thuộc tính màu, tọa độ
+    //viết chương trình vẽ 10 hình có tọa độ ngẫu nhiên
+    class Square {
+        x;
+        y;
+        side;
+        color;
+
+        constructor(x, y, side) {
+            this.x = x;
+            this.y = y;
+            this.side = side;
+            this.color = color;
+        }
+
+        setSide(side) {
+            this.side = side;
+        }
+
+        getPerimeter() {
+            return this.side * 4;
+        }
+
+        getArea() {
+            return this.side ** 2;
+        }
+
+        draw(ctx) {
+            ctx.rect(this.x, this.y, this.side, this.side);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+
+    // let square = new Square(50);
+    // let perimeter = square.getPerimeter();
+    // let area = square.getArea();
+    // alert("perimeter: " + perimeter + "; area: " + area);
+
+    let ctx = document.getElementById('canvas').getContext('2d');
+    for(let i = 0; i < 10; i++) {
+        let x = Math.random() * 300;
+        let y = Math.random() * 500;
+        let square = new Square(x, y, 30, 'Pink');
+        square.draw(ctx);
+    }
+
+
+
+</script>
+</body>
+</html>
