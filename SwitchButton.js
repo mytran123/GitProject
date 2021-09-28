@@ -13,7 +13,7 @@ class SwitchButton {
 
     switchOn() {
         this.status = true;
-        return this.lamp.turnOff();
+        return this.lamp.turnOn();
     }
 
     switchOff() {
